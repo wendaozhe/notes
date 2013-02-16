@@ -29,8 +29,10 @@ git config -e --system == vim /etc/gitconfig
 1、git init [name] 用于创建版本库
 2、git add *.sh 开始跟踪文件
 3、git clone url [name]  克隆远程源码为[name]
-4、git status 查看文件当前处于什么状态
-5、git commit 用于把暂存区的数据提交到版本控制系统，-m参数可以直接跟提交说明,-s参数用来在提交说明中直接添加提交者的姓名和email信息
-6、git log 用来查看日志，--stat参数可用来查看文件变更的统计
-
+4、git status 查看文件当前处于什么状态 -s 参数用于精简模式的输出(注意输出M的位置的变化)
+5、git commit 用于把暂存区的数据提交到版本控制系统，-m参数可以直接跟提交说明,-s参数用来在提交说明中直接添加提交者的姓名和email信息,-a参数可以不经过add而直接提交所有跟踪文件的变更操作(强烈不建议)
+6、git log 用来查看日志，--stat参数可用来查看文件变更的统计，--pretty=oneline用来显示日志首行的内容,新版本中可以直接使用--oneline来查看首行
+7、git diff用了查看修改后的文件与版本库中的文件的差异 --cached或--staged参数显示的是暂存区和版本库中的文件的差异,加上分支名称(master)显示版本库中的文件和修改后的文件的差异
+8、git stash 用来保存当前工作区的工作进度
+9、git reset --hard num 用来恢复到以前的状态，num可以根据git log --oneline来查看,最终可以根据git reflog show master中获得，进而任意恢复
 
