@@ -30,6 +30,7 @@ git config -e --system == vim /etc/gitconfig
 2、git add *.sh 开始跟踪文件
 3、git clone url [name]  克隆远程源码为[name]
 4、git status 查看文件当前处于什么状态
-5、git commit 用于把暂存区的数据提交到版本控制系统，-m参数可以直接跟提交说明
+5、git commit 用于把暂存区的数据提交到版本控制系统，-m参数可以直接跟提交说明,-s参数用来在提交说明中直接添加提交者的姓名和email信息
+6、git log 用来查看日志，--stat参数可用来查看文件变更的统计
 
 
