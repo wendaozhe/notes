@@ -13,6 +13,9 @@ git特点：
 1、linux大神杰作
 2、分布式的版本控制，拒绝了服务器的单点故障
 
+git小技巧：
+1、进入git源码contrib/completion/ cp git-completion.bash ~/.git-completion.bash,添加source ~/.git-completion.bash到.bashrc中
+
 配置：
 /etc/gitconfig:系统中对所有用户都适用的配置，使用git config --system命令编辑
 ~/.gitcongfig:特定用户的配置文件，使用git config --global命令编辑
@@ -38,13 +41,6 @@ git config -e --system == vim /etc/gitconfig
 2、git add *.sh 开始跟踪文件
 3、git clone url [name]  克隆远程源码为[name]
 4、git status 查看文件当前处于什么状态 -s 参数用于精简模式的输出(注意输出M的位置的变化)
-<<<<<<< HEAD
-5、git commit 用于把暂存区的数据提交到版本控制系统，-m参数可以直接跟提交说明,-s参数用来在提交说明中直接添加提交者的姓名和email信息,-a参数可以不经过add而直接提交所有跟踪文件的变更操作(强烈不建议)
-6、git log 用来查看日志，--stat参数可用来查看文件变更的统计，--pretty=oneline用来显示日志首行的内容,新版本中可以直接使用--oneline来查看首行
-7、git diff用了查看修改后的文件与版本库中的文件的差异 --cached或--staged参数显示的是暂存区和版本库中的文件的差异,加上分支名称(master)显示版本库中的文件和修改后的文件的差异
-8、git stash 用来保存当前工作区的工作进度
-9、git reset --hard num 用来恢复到以前的状态，num可以根据git log --oneline来查看,最终可以根据git reflog show master中获得，进而任意恢复
-=======
 5、git commit 用于把暂存区的数据提交到版本控制系统，-m参数可以直接跟提交说明,-s参数用来在提交说明中直接添加提交者的姓名和email信息,-a参数可以不经过add而直接提交所有跟踪文件的变更操作(强烈不建议),--amend参数用来修改最后一次提交过的的提交说明
 6、git log 用来查看日志，--stat参数可用来查看文件变更的统计，--pretty=oneline用来显示日志首行的内容,新版本中可以直接使用--oneline来查看首行
 7、git diff用了查看修改后的文件与版本库中的文件的差异 --cached或--staged参数显示的是暂存区和版本库中的文件的差异,加上分支名称(master)显示版本库中的文件和修改后的文件的差异
@@ -58,4 +54,16 @@ git config -e --system == vim /etc/gitconfig
    git checkout name 转换到分支name
    git checkout master && git merge name 合并分支name
    git branch -d name 删除分支name
+13、关于远程库(不含标签部分)
+   git remote 查看当前配置下的远程库，-v 参数可以查看详细参数
+   git remote add pf git@github.com:wendaozhe/notes.git 添加远程库
+   git fetch pf 抓取本地没有的远程notes库
+   git pull git@github.com:wendaozhe/notes.git 抓取远程notes库，并自动合并到本地master
+   git clone 自动创建本地master分支用于跟踪远程仓库中的master分支
+   git push pf master推送数据到远程库
+   git remote show pf查看远程仓库的信息
+   git remote rename origin note重命名远程仓库
+   git remote rm note删除远程仓库
+14、git rebase  把别人的补丁打到自己的分支，更加线性(其作用等同于git merge) ,永远不要rebase那些已经推送到公共仓库的更新,把rebase当成是推送之前清理提交历史的一种手段
+
 
