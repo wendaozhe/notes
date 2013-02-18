@@ -65,5 +65,9 @@ git config -e --system == vim /etc/gitconfig
    git remote rename origin note重命名远程仓库
    git remote rm note删除远程仓库
 14、git rebase  把别人的补丁打到自己的分支，更加线性(其作用等同于git merge) ,永远不要rebase那些已经推送到公共仓库的更新,把rebase当成是推送之前清理提交历史的一种手段
-
+15、git服务器架设：
+   git clone --bare flw /opt/flw.git 建立仓库副本
+   账户访问：
+      1、在ssh服务器为每个用户创建账户
+      2、在主机上建立一个git账户，让每个需要写权限的人发送一个ssh公钥，然后将其加入git账户的~/.ssh/authorized_keys文件(这不会影响到commit记录)
 
