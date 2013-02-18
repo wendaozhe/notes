@@ -70,4 +70,15 @@ git config -e --system == vim /etc/gitconfig
    账户访问：
       1、在ssh服务器为每个用户创建账户
       2、在主机上建立一个git账户，让每个需要写权限的人发送一个ssh公钥，然后将其加入git账户的~/.ssh/authorized_keys文件(这不会影响到commit记录)
+   git账户方案详细：
+      useradd git -s /bin/bash -m
+      su git
+      cd ~git/.ssh
+      cat user_keypub>>~git/.ssh/authorized_keys
+      user1:
+      git init flw
+      cd flw
+      git remote add pf git@192.168.1.106:~git/note.git
+      git pull pf master 
+16、只读型的web访问页面笔记(暂缺)
 
