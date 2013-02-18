@@ -81,4 +81,4 @@ git config -e --system == vim /etc/gitconfig
       git remote add pf git@192.168.1.106:~git/note.git
       git pull pf master 
 16、只读型的web访问页面笔记(暂缺)
-
+17
