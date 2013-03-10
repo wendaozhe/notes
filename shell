@@ -1,0 +1,40 @@
+if/then/else:
+(())和let 是算术扩展结构，用来做算术比较。((9>8));echo $?
+if技巧：
+if grep -q "$string"
+文件测试操作：
+-e exists
+-f file
+-s zero size
+-d directory
+-r read
+-w write
+-x exec
+f1 -nt f2 newer
+f1 -ot f2 older
+f1 -ef f2 the same file
+整数比较：
+-eq equal
+-ne not eq
+-gt greater
+-ge gt or eq
+-lt less than
+-le lt or eq
+以上操作在[[]]或[]中执行
+也可以使用><=,但要在(())中使用
+字符串比较：
+= ==
+!=
+-z zro
+-n not null
+逻辑操作：
+[[]]结构使用&& ||
+[]结构使用 -a -o
+特别注意：测试操作符必须两边有空格！特别注意=用在赋值和测试的时候的不同。
+IFS:默认为空白（空格、tab、换行）
+$?上一个退出码
+$$ 脚本自身的id
+字符串：
+   ${#string} 字符串的长度
+   
+
